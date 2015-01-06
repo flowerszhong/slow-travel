@@ -16,6 +16,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	margin: 0;
 }
 
+body{
+	font-family: "Microsoft Yahei",Arial,"\5b8b\4f53",Verdana,sans-serif;
+}
+
 .header,
 .wrap,
 .slider-wrap,
@@ -28,8 +32,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 .header{
-	height:120px;
 }
+
+
 
 #logo{
 	width:200px;
@@ -37,12 +42,75 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .header-sider{
+	padding-top: 20px;
 	width:550px;
 	float: right;
 }
 
+.slogan{
+	clear: both;
+	background:#c9a746 url(assets/images/slogan.jpg) 0 -5px no-repeat; 
+	height: 45px;
+}
+
+.searchbar-wrap{
+	height: 40px;
+	width: 320px;
+	padding: 5px;
+	background:url(assets/images/searchbar.jpg) 0 0 no-repeat; 
+}
+
+.searchform{
+	float: right;
+}
+.searchbar-wrap #s{
+	width: 270px;
+	height: 25px;
+	border: 0 none;
+}
+
+.searchbar-wrap #searchsubmit{
+	border: 0 none;
+	cursor: pointer;
+	width: 30px;
+	height: 25px;
+	background: none;
+	text-indent: 2000px;
+}
+
+.login-bar{
+	clear:both;
+	float:right;
+	padding-right: 30px;
+	font-size: 11px;
+}
+
+.login-bar .btn{
+	padding: 1px 5px 1px 5px;
+	background: #e48f01;
+	color: #fff2c8;
+	border: 1px solid #c18f4a;
+	border-radius: 5px;
+	margin-right: 3px;
+	text-align: center;
+}
+
+.login-bar .social-btn{
+	padding: 1px 5px 1px 5px;
+	background: #fff;
+	color: #9e9ca1;
+	border: 1px solid #d5d6d8;
+	border-radius: 5px;
+	margin-right: 5px;
+	text-align: center;
+}
+
+.login-bar .btn-more{
+	color: #c9a746;
+}
+
+
 .slider-wrap{
-	height: 400px;
 }
 
 .wrap{

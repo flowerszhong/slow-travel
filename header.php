@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Slow Travel
- * @since Slow Travel
+ * @since Slow Travel v0.1
  */
 ?><!DOCTYPE html>
 <html>
@@ -20,20 +20,23 @@
 
 <div class="header">
 	<div id="logo">
-	 <?php bloginfo( 'name' ) ?>
+	 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ) ?>">
+	 <img src="<?php echo get_template_directory_uri() .'/assets/images/logo.jpg'; ?>" id="logo-img" />
+	 </a>
 	</div>
 
-<div class="header-sider">
-	<div class="search-bar">
-		<?php 
-		get_sidebar( 'search' );
-		 ?>
-	</div>
+	<div class="header-sider">
+		<div class="search-bar">
+			  <?php get_search_form( true ); ?>
+		</div>
 
-	<div class="login-bar">
-		<?php get_sidebar( 'loginbar' ); ?>
+		<div class="login-bar">
+			<?php get_sidebar( 'loginbar' ); ?>
+		</div>
 	</div>
-</div>
 	
+	<div class="slogan">
+
+	</div>
 	
 </div>
