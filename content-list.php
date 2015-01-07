@@ -37,7 +37,7 @@
 
 		<div class="post-meta-title-wrap">
 			<h2 class="post-title">
-				<a href="<?php the_permalink(); ?>">
+				<a href="<?php the_permalink(); ?>" class="post-title-link">
 					<?php the_title(); ?>
 				</a>
 			</h2>

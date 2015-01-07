@@ -14,10 +14,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 *{
 	padding: 0;
 	margin: 0;
+	box-sizing:border-box;
 }
 
-body{
-	font-family: "Microsoft Yahei",Arial,"\5b8b\4f53",Verdana,sans-serif;
+body {
+font: 12px Arial,"Microsoft Yahei","\5FAE\8F6F\96C5\9ED1",Tahoma,Helvetica,STHeiti,"Hiragino Sans GB";
+_font-family: Arial,Tahoma,Helvetica,STHeiti;
+color: #666;
 }
 
 .header,
@@ -25,7 +28,6 @@ body{
 .slider-wrap,
 .footer{
 	width:1000px;
-	border: 1px solid red;
 	margin: 0 auto;
 }
 
@@ -54,7 +56,7 @@ body{
 }
 
 .searchbar-wrap{
-	height: 40px;
+	height: 50px;
 	width: 320px;
 	padding: 5px;
 	background:url(assets/images/searchbar.jpg) 0 0 no-repeat; 
@@ -64,9 +66,11 @@ body{
 	float: right;
 }
 .searchbar-wrap #s{
-	width: 270px;
+	width: 265px;
 	height: 25px;
 	border: 0 none;
+	outline: 0;
+	margin-left: 5px;
 }
 
 .searchbar-wrap #searchsubmit{
@@ -93,6 +97,7 @@ body{
 	border-radius: 5px;
 	margin-right: 3px;
 	text-align: center;
+	text-decoration: none;
 }
 
 .login-bar .social-btn{
@@ -103,45 +108,76 @@ body{
 	border-radius: 5px;
 	margin-right: 5px;
 	text-align: center;
+	text-decoration: none;
 }
 
 .login-bar .btn-more{
 	color: #c9a746;
+	text-decoration: none;
+}
+
+.add-new-btn{
+	text-decoration: none;
 }
 
 
 .slider-wrap{
 }
 
-.wrap{
+
+
+.main-container{
 	position: relative;
 	min-height: 700px;
+	background: #d5dbe9;
+	background:#fff url(assets/images/main-container.jpg) 0 -5px no-repeat; 
+	padding-top: 10px;
+	border: 1px solid #d5dcee;
+
 }
 
-.wrap .main{
-	width:740px;
-	border: 1px solid red;
+.wrap{
+	padding:3px 20px 0 20px;
+}
+
+.main-container .main{
+	width:700px;
+	/*border: 1px solid red;*/
 	overflow: hidden;
+	float: left;
+	padding: 5px;
 }
 
 .content-item{
 	padding: 5px;
 	margin-bottom: 5px;
-	border: 1px solid red;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #c6ccda;
+}
+
+.content-item:last-child{
+	border-bottom: 0 none;
 }
 
 .thumbnail-wrap{
 	float: left;
 	width:200px;
 	height: 140px;
+	/*background: #f7f7f7;*/
 	background: #fff;
 	padding: 5px;
 	overflow: hidden;
+	border:1px solid #ccc;
 }
 
 .thumbnail-wrap img{
-	width: 180px;
-	height: 140px;
+	width: 189px;
+	height: 128px;
+}
+
+.thumbnail-wrap img:hover{
+	width: 190px;
+	height: 130px;
 }
 
 .post img{
@@ -151,9 +187,16 @@ body{
 
 .author-avatar{
 	float: left;
-	border-radius: 40px;
+	width:50px;
+	height: 50px;
 	border: 1px solid #fff;
+	border-radius: 25px;
 	overflow: hidden;
+}
+
+.author-avatar img{
+	width: 50px;
+	height: 50px;
 }
 
 .post-excerpt{
@@ -162,28 +205,54 @@ body{
 
 .post-meta{
 	float: left;
-	max-width: 490px;
+	max-width: 470px;
 	overflow: hidden;
+	margin-left:10px;
+	color: #666;
 }
 
 
-.wrap .side{
-	width: 250px;
-	height: 700px;
+.main-container .side{
+	float: right;
+	width:230px;
+}
+
+.main-container .conner-cat{
+	width: 95px;
+	height: 74px;
 	position: absolute;
-	right: 0;
-	top: 0;
-	border: 1px solid red;
+	right: -25px;
+	top: -53px;
+	background: url(assets/images/cat-1.png);
 }
 
 .post-meta-title-wrap{
 	float: left;
+	height: 50px;
+	margin-left: 10px;
+}
+
+.post-excerpt{
+	font-size: 14px;
+	line-height: 24px;
 }
 
 .post-title{
-	
+	color: #619add;
+	line-height: 30px;
+}
+.author-meta{
+
 }
 
+.post-title a{
+	color: #619add;
+	text-decoration: none;
+}
+
+.post-title a:hover{
+	text-decoration: underline;
+}
 
 
 .footer{
@@ -451,4 +520,7 @@ body{
 	position: relative;
 	top: -3px;
 }
+
+
+
 
