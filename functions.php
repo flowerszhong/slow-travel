@@ -112,11 +112,19 @@ function setPostLikeCount($postID) {
 }
 
 
+
+
+
 // function thumbs_rating_print($content)
 // {
 //     return $content.thumbs_rating_getlink();
 // }
 // add_filter('the_content', 'thumbs_rating_print');
+
+
+
+require_once('bp-functions.php');
+
 
 
  ?>

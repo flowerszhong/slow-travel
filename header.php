@@ -18,6 +18,8 @@
 </head>
 <body <?php body_class( ); ?>>
 
+<div class="wrap-all">
+	
 <div class="header">
 	<div id="logo">
 	 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ) ?>">

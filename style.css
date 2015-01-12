@@ -23,6 +23,12 @@ _font-family: Arial,Tahoma,Helvetica,STHeiti;
 color: #666;
 }
 
+.wrap-all{
+	background: #fff;
+	width: 1002px;
+	margin: 0 auto;
+}
+
 .header,
 .wrap,
 .slider-wrap,
@@ -212,10 +218,23 @@ color: #666;
 }
 
 
+.side{
+	border-top-right-radius: 3px;
+	float: left;
+	margin-left: -230px;
+	margin-top: 1px;
+	width: 230px;
+}
+
 .main-container .side{
 	float: right;
 	width:230px;
 }
+
+
+
+
+
 
 .main-container .conner-cat{
 	width: 95px;
@@ -240,6 +259,7 @@ color: #666;
 .post-title{
 	color: #619add;
 	line-height: 30px;
+	margin: 0;
 }
 .author-meta{
 
@@ -256,7 +276,7 @@ color: #666;
 
 
 .footer{
-	height: 300px;
+	/*height: 300px;*/
 }
 
 
@@ -521,6 +541,64 @@ color: #666;
 	top: -3px;
 }
 
+.avatar-block{
+	min-height: 40px;
+}
+
+.item-avatar{
+	width:40px;
+	height: 40px;
+	overflow: hidden;
+	border-radius: 20px;
+	float: left;
+	margin-right: 10px;
+
+}
+
+.widget-area .widget{
+	width:200px;
+	clear: both;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+.widget-title{
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+.side-top-bar{
+	width: 200px;
+	height: 40px;
+	margin-top: 30px;
+	background: url(assets/images/honor.png) -15px 0 no-repeat;
+}
+
+#wp-custom-admin-bar-my-account{
+	position: relative;
+}
+
+.ab-custom-sub-wrapper{
+	position: absolute;
+	top:20px;
+	left: 0;
+	display: none;
+	z-index: 999;
+	background: #fff;
+	border: 1px solid red;
+}
+.ab-sub-wrapper{
+	display: none;
+}
+
+.ab-submenu:hover .ab-sub-wrapper{
+	display: block;
+}
+
+#wp-custom-admin-bar-my-account:hover .ab-custom-sub-wrapper{
+	display: block;
+}
 
 
 

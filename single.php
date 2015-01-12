@@ -1,50 +1,58 @@
-<?php
+<?php get_header(); ?>
 
-get_header(); ?>
+	<div id="content">
+		<div class="padder">
 
-	<div class="wrap">
-		<div id="main" class="main">
+			<?php do_action( 'bp_before_blog_single_post' ); ?>
 
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+			<div class="page" id="blog-single" role="main">
 
-			/*
-			 * Include the post format-specific template for the content. If you want to
-			 * use this in a child theme, then include a file called called content-___.php
-			 * (where ___ is the post format) and that will be used instead.
-			 */
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			if(function_exists('thumbs_rating_getlink')){
-				thumbs_rating_getlink();
-			}
-			setPostViews(get_the_ID());
-			setPostLikeCount(get_the_id());
-			get_template_part( 'content');
+				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+					<div class="author-box">
+						<?php echo get_avatar( get_the_author_meta( 'user_email' ), '50' ); ?>
+						<p><?php printf( _x( 'by %s', 'Post written by...', 'buddypress' ), str_replace( '<a href=', '<a rel="author" href=', bp_core_get_userlink( $post->post_author ) ) ); ?></p>
+					</div>
 
-			// Previous/next post navigation.
-			the_post_navigation( array(
-				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentyfifteen' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Next post:', 'twentyfifteen' ) . '</span> ' .
-					'<span class="post-title">%title</span>',
-				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentyfifteen' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Previous post:', 'twentyfifteen' ) . '</span> ' .
-					'<span class="post-title">%title</span>',
-			) );
+					<div class="post-content">
+						<h2 class="posttitle"><?php the_title(); ?></h2>
 
-		// End the loop.
-		endwhile;
-		?>
+						<p class="date">
+							<?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress' ), get_the_date(), get_the_category_list( ', ' ) ); ?>
+							<span class="post-utility alignright"><?php edit_post_link( __( 'Edit this entry', 'buddypress' ) ); ?></span>
+						</p>
+
+						<div class="entry">
+							<?php the_content( __( 'Read the rest of this entry &rarr;', 'buddypress' ) ); ?>
+
+							<?php wp_link_pages( array( 'before' => '<div class="page-link"><p>' . __( 'Pages: ', 'buddypress' ), 'after' => '</p></div>', 'next_or_number' => 'number' ) ); ?>
+						</div>
+
+						<p class="postmetadata"><?php the_tags( '<span class="tags">' . __( 'Tags: ', 'buddypress' ), ', ', '</span>' ); ?>&nbsp;</p>
+
+						<div class="alignleft"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'buddypress' ) . '</span> %title' ); ?></div>
+						<div class="alignright"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'buddypress' ) . '</span>' ); ?></div>
+					</div>
+
+				</div>
+
+			<?php comments_template(); ?>
+
+			<?php endwhile; else: ?>
+
+				<p><?php _e( 'Sorry, no posts matched your criteria.', 'buddypress' ); ?></p>
+
+			<?php endif; ?>
 
 		</div>
-		<?php 
-		get_sidebar( );
-		 ?>
-	</div>
+
+		<?php do_action( 'bp_after_blog_single_post' ); ?>
+
+		</div><!-- .padder -->
+	</div><!-- #content -->
+
+	<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
