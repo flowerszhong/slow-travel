@@ -1,7 +1,6 @@
 <?php get_header( 'buddypress' ); ?>
 
 	<div id="content">
-	<div>test register</div>
 		<div class="padder">
 
 		<?php do_action( 'bp_before_register_page' ); ?>
@@ -21,7 +20,6 @@
 			<?php endif; // registration-disabled signup setp ?>
 
 			<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
-				<?php echo "request-details"; ?>
 
 				<h2><?php _e( 'Create an Account', 'buddypress' ); ?></h2>
 

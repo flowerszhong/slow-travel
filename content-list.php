@@ -31,7 +31,7 @@
 	<div class="post-meta-header">
 		<div class="author-avatar">
 			<a href="<?php get_the_author('url' ); ?>">
-				<?php echo get_avatar( get_the_author_meta('mail'), '64','', get_the_author() ); ?>
+				<?php echo get_avatar( get_the_author_meta('ID'), '64','', get_the_author() ); ?>
 			</a>
 		</div>
 

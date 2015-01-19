@@ -63,6 +63,69 @@ function slowtravel_widgets_init() {
 add_action( 'widgets_init', 'slowtravel_widgets_init' );
 
 
+
+// function htx_custom_logo() {
+// echo '
+// <style type="text/css" id="test-insert-style">
+// #wp-admin-bar-wp-logo > .ab-item .ab-icon { 
+// 	boder:1px solid red;
+// 	background-image: url('. get_bloginfo('template_directory') . '/assets/images/slow-icon.png) !important; 
+// 	background-position: 0 0;
+// 	}
+// #wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
+// 	background-position: 0 0;
+// 	}	
+// </style>
+// ';
+// }
+ 
+// //hook into the administrative header output
+// add_action('admin_head', 'htx_custom_logo');
+
+
+add_action('admin_head', 'my_custom_logo');
+function my_custom_logo() {
+   echo '
+   <style type="text/css" id="djjj">
+   #wp-admin-bar-wp-logo > .ab-item .ab-icon
+    { background-image: url('. get_bloginfo('template_directory').'/assets/images/slow-icon.png) !important; }
+   </style>';
+}
+
+
+function my_custom_login_logo() {
+    echo '
+<style type="text/css">
+        .login h1 a { background-image:url('.get_bloginfo('template_directory').'/assets/images/slow-icon.png) !important; }
+    </style>
+';
+}
+add_action('login_head', 'my_custom_login_logo');
+
+
+//remove submenus
+function remove_submenus() {
+  global $submenu;
+  unset($submenu['index.php'][10]); // Removes 'Updates'.
+  unset($submenu['themes.php'][5]); // Removes 'Themes'.
+  unset($submenu['options-general.php'][15]); // Removes 'Writing'.
+  unset($submenu['options-general.php'][25]); // Removes 'Discussion'.
+  unset($submenu['edit.php'][16]); // Removes 'Tags'. 
+}
+add_action('admin_menu', 'remove_submenus');
+
+function wps_admin_bar() {  
+    global $wp_admin_bar;  
+    $wp_admin_bar->remove_menu('wp-logo');  
+    $wp_admin_bar->remove_menu('about');  
+    $wp_admin_bar->remove_menu('wporg');  
+    $wp_admin_bar->remove_menu('documentation');  
+    $wp_admin_bar->remove_menu('support-forums');  
+    $wp_admin_bar->remove_menu('feedback');  
+}  
+add_action( 'wp_before_admin_bar_render', 'wps_admin_bar' ); 
+
+
 function getPostViews($postID){
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
@@ -124,6 +187,7 @@ function setPostLikeCount($postID) {
 
 
 require_once('bp-functions.php');
+ require_once('pagenavi.php');
 
 
 

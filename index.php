@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<?php if(is_home()): ?>
+<?php if(is_home() || is_category()): ?>
 
 <?php 
 get_template_part( "home",'slider' );
@@ -11,7 +11,7 @@ get_template_part( "home",'slider' );
 	
 	<div class="wrap">
 		<div class="main-toolbar">
-				<a href="" class="add-new-btn">
+				<a href="http://10.1.43.52:1988/slowtravel/wp-admin/post-new.php" class="add-new-btn">
 					<img src="<?php echo get_template_directory_uri(). '/assets/images/add_new.jpg'; ?>" />
 				</a>
 				<img src="<?php echo get_template_directory_uri(). '/assets/images/slogan-2.jpg'; ?>" />
@@ -24,7 +24,10 @@ get_template_part( "home",'slider' );
 				    <?php while (have_posts()) : the_post(); ?>
 				       <?php get_template_part( "content","list" ); ?>
 				    <?php endwhile; ?>
+				  <?php pagenavi(); ?>
+
 				  </div>
+
 				<?php else: ?>
 				<h1>No posts to show</h1>
 			<?php endif ?>
